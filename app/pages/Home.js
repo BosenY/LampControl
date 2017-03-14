@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 import Button from 'react-native-button';
 import {Actions} from 'react-native-router-flux'
+import Counter from '../containers/Counter.js'
 export default class Home extends React.Component {
         constructor(props, context) {
     super(props, context);
@@ -25,6 +26,7 @@ export default class Home extends React.Component {
         <Text style={styles.welcome}>
          Home
         </Text>
+        <Counter></Counter>
         <Button
         style={{fontSize: 20, color: 'green'}}
         styleDisabled={{color: 'red'}}
