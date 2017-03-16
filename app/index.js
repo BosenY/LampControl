@@ -8,7 +8,7 @@ import { helloSaga,watchIncrementAsync } from './sagas/index.js'
 import App from './containers/app'
 const logger = createLogger()
 const sagaMiddleware = createSagaMiddleware()
-const store = createStore(
+export const store = createStore(
   addApp,
   applyMiddleware(sagaMiddleware,logger)
 )
@@ -28,7 +28,6 @@ const Root = () => (
     <App />
   </Provider>
 );
-
 export default Root;
 
 

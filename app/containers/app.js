@@ -9,7 +9,13 @@ import Center from '../pages/Center'
 import Home from '../pages/Home'
 import List from '../pages/List'
 import Login from '../pages/Login'
-import {Scene, Router,TabBar} from 'react-native-router-flux';
+import Loading from '../pages/Loading'
+import {
+  Scene,
+  Router,
+  TabBar,
+  ActionConst
+} from 'react-native-router-flux';
  import {
 StyleSheet,
 View,
@@ -49,11 +55,8 @@ const styles = StyleSheet.create({
     footer={TabBar}
     titleStyle={styles.navBarTitle}
     navigationBarStyle={styles.navBar}
-    >
-      <Scene key="root"
-      tabs={true}
-      >
-        <Scene 
+    ><Scene 
+    type={ActionConst.REPLACE}
         key="Login" 
         component={Login} 
         hideNavBar 
@@ -61,12 +64,23 @@ const styles = StyleSheet.create({
         initial
         />
         <Scene 
+        key="Loading" 
+        component={Loading} 
+        hideNavBar 
+        hideTabBar 
+        />
+      <Scene key="Tabbar"
+      tabs={true}
+      type={ActionConst.REPLACE}
+      >
+        
+        <Scene 
         key="Home" 
         component={Home} 
         title="Home"
         icon={TabIcon}
         iconName="md-home"
-   
+        initial
         />
         <Scene 
         key="List" 

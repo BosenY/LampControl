@@ -11,5 +11,4 @@ export default function counter(state =    0 , action) {
 }
 // export default counter
 
-
-
+//函数名就是 state的名称
